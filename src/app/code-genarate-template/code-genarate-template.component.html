@@ -1,0 +1,72 @@
+<H1 class="template_header" >Digital Order Spring Boot Code Template Generation</H1>
+
+<div class="container">
+  <form (ngSubmit)="saveTemplate()" #templateForm="ngForm" > 
+    <fieldset class="form-group">
+        <label class="template_label" >Select Project</label>
+        <select class="form-control" [(ngModel)]="template.projectUrl" name="first" >
+          <option></option>
+          <option *ngFor="let repo of repoArrays" [value]="repo.html_url" >{{repo.name}}</option>
+        </select>
+    </fieldset>
+    <fieldset class="form-group">
+      <label  class="template_label" >Step 1:</label>
+      <label >Selected GitHub Project will be cloned to your local folder(C:\Projects\Github_Project)</label>
+    </fieldset>
+    <fieldset class="form-group">
+      <label class="template_label" >Step 2: </label>
+      <label >mvn archetype:create-from-project command will be executed </label>
+    </fieldset>
+    <fieldset class="form-group">
+      <label class="template_label" >Step 3: </label>
+      <label >Archetype project will be generated in archetype folder(/target/generated-sources/archetype) </label>
+    </fieldset>
+    <fieldset class="form-group">
+      <label  class="template_label">Step 4: </label>
+      <label >mvn clean install command will be executed</label>
+    </fieldset>
+    <fieldset class="form-group">
+      <label  class="template_label">Step 5: </label>
+      <label >Archtetype will be generated under maven repo at .m2/repository/archetype-catalog.xml </label>
+    </fieldset>
+    <fieldset class="form-group">
+      <label class="template_label" >Project Group Id</label>
+      <input type="text" #groupId="ngModel" 
+            [(ngModel)]="template.groupId" class="form-control" 
+                name="groupId" required="required" minlength="5">
+    </fieldset>    
+    <fieldset class="form-group">
+        <label class="template_label" >Project Artifact Id</label>
+        <input type="text" #artifactId="ngModel" 
+              [(ngModel)]="template.artifactId" class="form-control" 
+                  name="artifactId" required="required" minlength="5">
+      </fieldset>      
+    <fieldset class="form-group">
+        <label class="template_label" >Project Package</label>
+        <input type="text" #pkg="ngModel" 
+              [(ngModel)]="template.pkg" class="form-control" 
+                  name="pkg" required="required" minlength="5">
+      </fieldset>    
+      <fieldset class="form-group">
+          <label class="template_label" >Project Version</label>
+          <input type="text" #version="ngModel" 
+                [(ngModel)]="template.version" class="form-control" 
+                    name="version" required="required" minlength="5">
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label  class="template_label">Step 6: </label>
+          <label >After getting the project information then below command will be executed</label>
+        </fieldset>
+        <fieldset class="form-group">
+          <label  class="template_label">Step 7:</label>
+          <label >mvn -B archetype:generate command will be executed</label>
+        </fieldset>
+    <button type="submit" class="btn template_btn">Generate </button>
+    
+    <fieldset class="form-group">
+      <label  class="template_label">Step 8: </label>
+      <label >The Spring boot template project will be generated in this location(C:\Projects\SpringBoot_Code_Template)</label>
+    </fieldset>
+  </form>  
+</div>

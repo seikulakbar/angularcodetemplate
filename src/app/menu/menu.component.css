@@ -1,0 +1,15 @@
+.logo-image{
+    width: 46px;
+    height: 55px;
+    border-radius: 20%;
+    overflow: hidden;
+    margin-top: -6px;
+}
+.menu_name{
+    color: #ea0a8e;
+}
+.tmobile-image{
+    height: 55px;
+    margin-top: -6px;
+    margin-left:180px;
+}
